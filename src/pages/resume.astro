@@ -194,7 +194,7 @@ const tools = [
 		padding: 1rem 1.05rem;
 		border: 1px solid var(--border);
 		border-radius: 1.15rem;
-		background: #ffffff;
+		background: var(--card);
 	}
 
 	.tool-mark {
@@ -204,8 +204,12 @@ const tools = [
 		display: grid;
 		place-items: center;
 		border-radius: 0.9rem;
-		background: linear-gradient(180deg, #f7f7f7 0%, #ececec 100%);
-		border: 1px solid #e0e0e0;
+		background: linear-gradient(
+			180deg,
+			color-mix(in srgb, var(--muted) 90%, var(--card) 10%) 0%,
+			color-mix(in srgb, var(--border) 55%, var(--card) 45%) 100%
+		);
+		border: 1px solid color-mix(in srgb, var(--border) 88%, var(--background) 12%);
 		font-size: 0.95rem;
 		font-weight: 800;
 		letter-spacing: -0.04em;
@@ -213,8 +217,8 @@ const tools = [
 	}
 
 	.tool-mark-dark {
-		background: #111111;
-		border-color: #111111;
+		background: color-mix(in srgb, var(--foreground) 92%, #111111 8%);
+		border-color: color-mix(in srgb, var(--foreground) 92%, #111111 8%);
 	}
 
 	.tool-logo {

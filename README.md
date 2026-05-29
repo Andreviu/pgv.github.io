@@ -17,6 +17,7 @@ It includes:
 - a dedicated Works page with pagination
 - a sample case study page
 - About and Resume pages
+- light and dark mode with a persistent header icon toggle
 - self-hosted tool logos on the Resume page
 - Privacy, Terms, and 404 pages
 - shared header/footer/navigation
@@ -92,6 +93,12 @@ Main SEO files:
 - [public/og-image.svg](./public/og-image.svg)
 
 ## Content and Pages
+
+Theme behavior:
+
+- the site respects the visitor's system color scheme by default
+- the header includes an icon-only theme toggle for switching between light and dark mode
+- the selected theme is saved in `localStorage`
 
 Main pages:
 
