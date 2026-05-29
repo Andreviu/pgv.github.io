@@ -1,5 +1,14 @@
 # Alba - Astro Theme for UI/UX and Product Designers
 
+[![Astro 6](https://img.shields.io/badge/Astro-6-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/)
+[![Tailwind CSS 4](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Configured-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![MDX](https://img.shields.io/badge/MDX-Enabled-1B1F24?style=for-the-badge&logo=mdx&logoColor=white)](https://mdxjs.com/)
+[![Vercel Ready](https://img.shields.io/badge/Vercel-Ready-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Netlify Ready](https://img.shields.io/badge/Netlify-Ready-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://www.netlify.com/)
+
+**Preview:** [alba-mocha-iota.vercel.app](https://alba-mocha-iota.vercel.app/)
+
 Alba is a clean Astro portfolio theme for UI/UX designers, product designers, and visual product thinkers.
 
 It includes:
