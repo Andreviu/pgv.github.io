@@ -7,12 +7,12 @@ import { siteConfig } from '../config/site';
 		<span class="shared-brand-mark">{siteConfig.name}</span>
 	</a>
 
-	<nav class="shared-nav" aria-label="Primary">
+	<nav class="shared-nav shared-nav-desktop" aria-label="Primary">
 		{siteConfig.navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
 
 		<div class="shared-menu">
 			<button class="shared-menu-trigger" type="button" aria-haspopup="true">
-				<span>All Pages</span>
+				<span>Other</span>
 				<img src="/icons/chevron-down.svg" alt="" width="16" height="16" />
 			</button>
 			<div class="shared-menu-panel">
@@ -20,4 +20,28 @@ import { siteConfig } from '../config/site';
 			</div>
 		</div>
 	</nav>
+
+	<details class="shared-nav-mobile">
+		<summary class="shared-nav-toggle" aria-label="Toggle navigation menu">
+			<span class="shared-nav-toggle-box" aria-hidden="true">
+				<span></span>
+				<span></span>
+				<span></span>
+			</span>
+		</summary>
+
+		<nav class="shared-mobile-panel" aria-label="Mobile">
+			{siteConfig.navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+
+			<details class="shared-mobile-submenu">
+				<summary class="shared-mobile-submenu-trigger">
+					<span>Other</span>
+					<img src="/icons/chevron-down.svg" alt="" width="16" height="16" />
+				</summary>
+				<div class="shared-mobile-submenu-panel">
+					{siteConfig.extraPages.map((link) => <a href={link.href}>{link.label}</a>)}
+				</div>
+			</details>
+		</nav>
+	</details>
 </header>
