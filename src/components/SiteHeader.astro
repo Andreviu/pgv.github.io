@@ -1,5 +1,7 @@
 ---
 import { siteConfig } from '../config/site';
+const currentPath = Astro.url.pathname || '/';
+const menuPanelId = 'shared-menu-panel';
 ---
 
 <header class="shared-header">
@@ -8,16 +10,30 @@ import { siteConfig } from '../config/site';
 	</a>
 
 	<div class="shared-header-actions">
-		<nav class="shared-nav shared-nav-desktop" aria-label="Primary">
-			{siteConfig.navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+		<nav class="shared-nav shared-nav-desktop" aria-label="Primary navigation">
+			{siteConfig.navLinks.map((link) => (
+				<a href={link.href} aria-current={link.href === currentPath ? 'page' : undefined}>
+					{link.label}
+				</a>
+			))}
 
 			<div class="shared-menu">
-				<button class="shared-menu-trigger" type="button" aria-haspopup="true">
+				<button
+					class="shared-menu-trigger"
+					type="button"
+					aria-haspopup="menu"
+					aria-expanded="false"
+					aria-controls={menuPanelId}
+				>
 					<span>Other</span>
 					<img src="/icons/chevron-down.svg" alt="" width="16" height="16" />
 				</button>
-				<div class="shared-menu-panel">
-					{siteConfig.extraPages.map((link) => <a href={link.href}>{link.label}</a>)}
+				<div class="shared-menu-panel" id={menuPanelId} role="menu" aria-label="More navigation pages">
+					{siteConfig.extraPages.map((link) => (
+						<a href={link.href} role="menuitem">
+							{link.label}
+						</a>
+					))}
 				</div>
 			</div>
 		</nav>
@@ -88,3 +104,24 @@ import { siteConfig } from '../config/site';
 		</details>
 	</div>
 </header>
+
+<script is:inline>
+	(() => {
+		const menu = document.querySelector('.shared-menu');
+		const button = menu?.querySelector('.shared-menu-trigger');
+		if (!menu || !button) return;
+
+		const setExpanded = (value) => {
+			button.setAttribute('aria-expanded', String(value));
+		};
+
+		menu.addEventListener('focusin', () => setExpanded(true));
+		menu.addEventListener('focusout', (event) => {
+			if (!menu.contains(event.relatedTarget)) {
+				setExpanded(false);
+			}
+		});
+		menu.addEventListener('mouseenter', () => setExpanded(true));
+		menu.addEventListener('mouseleave', () => setExpanded(false));
+	})();
+</script>
