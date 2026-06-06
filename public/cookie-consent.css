@@ -31,6 +31,7 @@
   right: 0;
   bottom: 0;
   z-index: 9998;
+  border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent);
   background: rgba(255, 255, 255, 0.95);
   color: #111111;
   opacity: 0;

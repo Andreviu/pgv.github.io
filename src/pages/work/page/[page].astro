@@ -118,10 +118,13 @@ const { page, totalPages, visibleProjects } = Astro.props;
 	.works-eyebrow,
 	.work-name {
 		margin: 0;
-		font-size: 0.95rem;
-		font-style: italic;
-		font-weight: 500;
-		letter-spacing: -0.02em;
+		font-family: var(--font-mono);
+		font-size: 0.82rem;
+		font-style: normal;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		line-height: 1.4;
+		text-transform: uppercase;
 		color: var(--muted-foreground);
 	}
 
@@ -176,7 +179,7 @@ const { page, totalPages, visibleProjects } = Astro.props;
 	.work-copy {
 		display: grid;
 		align-content: start;
-		gap: 1rem;
+		gap: 0.8rem;
 	}
 
 	.work-description {

@@ -73,9 +73,12 @@ import { projects } from '../data/projects';
 
 	.eyebrow,
 	.project-name {
-		font-size: 0.95rem;
+		font-family: var(--font-mono);
+		font-size: 0.82rem;
 		font-weight: 600;
-		letter-spacing: -0.02em;
+		letter-spacing: 0.08em;
+		line-height: 1.4;
+		text-transform: uppercase;
 	}
 
 	.hero {
@@ -91,8 +94,7 @@ import { projects } from '../data/projects';
 	.project-name {
 		margin: 0;
 		color: var(--muted-foreground);
-		font-style: italic;
-		font-weight: 500;
+		font-style: normal;
 	}
 
 	.project-card .project-name {
@@ -155,7 +157,7 @@ import { projects } from '../data/projects';
 
 	.project-card {
 		display: grid;
-		gap: 1.6rem;
+		gap: 1.5rem;
 		padding: 1.5rem;
 		border-radius: 1.35rem;
 		overflow: hidden;
@@ -204,7 +206,6 @@ import { projects } from '../data/projects';
 	.project-title {
 		max-width: none;
 		width: 100%;
-		min-height: 4.6em;
 		font-size: clamp(1.45rem, 1.75vw, 1.9rem);
 		line-height: 1.16;
 		letter-spacing: -0.04em;
