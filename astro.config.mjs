@@ -18,7 +18,7 @@ if (usingFallbackSiteUrl) {
 
 // https://astro.build/config
 export default defineConfig({
-	site: siteConfig.siteUrl,
+	site:'https://andreviupgv.github.io',
 	integrations: [
 		mdx(),
 		sitemap({
